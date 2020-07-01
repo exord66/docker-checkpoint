@@ -1,4 +1,4 @@
-CREATE TABLE Users (
+CREATE TABLE IF NOT EXISTS Users (
   user_id serial,
   first_name varchar(255),
   last_name varchar(255),
@@ -6,7 +6,7 @@ CREATE TABLE Users (
   PRIMARY KEY (user_id)
 );
 
-CREATE TABLE Manufacturers (
+CREATE TABLE IF NOT EXISTS Manufacturers (
   company_id serial,
   company_name varchar(255),
   contact_name varchar(255),
@@ -15,7 +15,7 @@ CREATE TABLE Manufacturers (
   PRIMARY KEY (company_id)
 );
 
-CREATE TABLE Customers (
+CREATE TABLE IF NOT EXISTS Customers (
   customer_id serial,
   company_name varchar(255),
   contact_name varchar(255),
@@ -24,14 +24,14 @@ CREATE TABLE Customers (
   PRIMARY KEY (customer_id)
 );
 
-CREATE TABLE Items (
+CREATE TABLE IF NOT EXISTS Items (
   item_id serial,
   name varchar(255),
   description varchar(255),
   PRIMARY KEY (item_id)
 );
 
-CREATE TABLE PurchaseOrders (
+CREATE TABLE IF NOT EXISTS PurchaseOrders (
   po_id serial,
   user_id integer,
   manufacturer_id integer,
@@ -45,7 +45,7 @@ CREATE TABLE PurchaseOrders (
   FOREIGN KEY (item_id) REFERENCES Items (item_id)
 );
 
-CREATE TABLE SalesOrders (
+CREATE TABLE IF NOT EXISTS SalesOrders (
   so_id serial,
   user_id integer,
   customer_id integer,

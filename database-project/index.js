@@ -32,7 +32,6 @@ app.use(bodyParser.urlencoded(
 ));
 
 
-
 const db_users = require('./queries/user-queries')
 const db_manufacturers = require('./queries/manufacturers-queries')
 const db_customers = require('./queries/customer-queries')
